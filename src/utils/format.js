@@ -18,3 +18,26 @@ export const statusVariant = (estado) => {
   };
   return map[estado] || "neutral";
 };
+
+// --- Estado de vigencia de una membresía en base a su fecha de vencimiento ---
+// No confundir con el estado de pago de la cuota (Pagado/Pendiente).
+const PROXIMO_A_VENCER_DIAS = 15;
+
+export function membershipDaysLeft(vencimiento) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const venc = new Date(vencimiento + "T00:00:00");
+  return Math.round((venc - today) / 86400000);
+}
+
+export function membershipStatusLabel(vencimiento) {
+  const days = membershipDaysLeft(vencimiento);
+  if (days < 0) return "Vencida";
+  if (days <= PROXIMO_A_VENCER_DIAS) return "Próxima a vencer";
+  return "Vigente";
+}
+
+export function membershipStatusVariant(label) {
+  const map = { Vigente: "success", "Próxima a vencer": "warning", Vencida: "danger" };
+  return map[label] || "neutral";
+}

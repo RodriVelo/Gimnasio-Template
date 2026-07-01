@@ -11,6 +11,7 @@ function PanelSwitcher({ collapsed, onNavigate }) {
     { to: "/admin", label: "Administrador" },
     { to: "/entrenador", label: "Entrenador" },
     { to: "/cliente", label: "Cliente" },
+    { to: "/recepcionista", label: "Recepcionista" },
   ];
   const [open, setOpen] = useState(false);
   return (

@@ -27,6 +27,9 @@ import ConfirmarAsistencia from "./pages/client/ConfirmarAsistencia";
 import Progreso from "./pages/client/Progreso";
 import ClientPagos from "./pages/client/ClientPagos";
 import Perfil from "./pages/client/Perfil";
+import RecepcionistaHome from "./pages/recepcionista/RecepcionistaHome";
+import RecepcionistaClientes from "./pages/recepcionista/Clientes";
+import RecepcionistaMembresias from "./pages/recepcionista/Membresias";
 
 export default function App() {
   return (
@@ -45,6 +48,13 @@ export default function App() {
           <Route path="ejercicios" element={<Ejercicios />} />
           <Route path="horarios" element={<Horarios />} />
           <Route path="reportes" element={<Reportes />} />
+        </Route>
+
+        <Route path="/recepcionista" element={<DashboardLayout role="recepcionista" />}>
+          <Route index element={<RecepcionistaHome />} />
+          <Route path="clientes" element={<RecepcionistaClientes />} />
+          <Route path="asistencia" element={<AsistenciaManual />} />
+          <Route path="membresias" element={<RecepcionistaMembresias />} />
         </Route>
 
         <Route path="/entrenador" element={<DashboardLayout role="entrenador" />}>

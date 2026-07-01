@@ -36,8 +36,40 @@ export const clientNav = [
   { label: "Perfil", to: "/cliente/perfil", icon: UserCircle },
 ];
 
+export const recepcionistaNav = [
+  { label: "Inicio", to: "/recepcionista", icon: Home, end: true },
+  { label: "Clientes", to: "/recepcionista/clientes", icon: Users },
+  { label: "Asistencia", to: "/recepcionista/asistencia", icon: UserCheck },
+  { label: "Membresías", to: "/recepcionista/membresias", icon: IdCard },
+];
+
 export const roleConfig = {
-  admin: { label: "Administrador", nav: adminNav, base: "/admin", userName: "Diego Herrera", userRole: "Administrador" },
-  entrenador: { label: "Entrenador", nav: trainerNav, base: "/entrenador", userName: "Lucas Ferreyra", userRole: "Entrenador" },
-  cliente: { label: "Cliente", nav: clientNav, base: "/cliente", userName: "Martina Acosta", userRole: "Cliente" },
+  admin: {
+    label: "Administrador",
+    nav: adminNav,
+    base: "/admin",
+    userName: "Diego Herrera",
+    userRole: "Administrador",
+  },
+  entrenador: {
+    label: "Entrenador",
+    nav: trainerNav,
+    base: "/entrenador",
+    userName: "Lucas Ferreyra",
+    userRole: "Entrenador",
+  },
+  cliente: {
+    label: "Cliente",
+    nav: clientNav,
+    base: "/cliente",
+    userName: "Martina Acosta",
+    userRole: "Cliente",
+  },
+  recepcionista: {
+    label: "Recepcionista",
+    nav: recepcionistaNav,
+    base: "/recepcionista",
+    userName: "Pablo Rodriguez",
+    userRole: "Recepcionista",
+  },
 };

@@ -1,6 +1,6 @@
 export default function Table({ columns, children }) {
   return (
-    <div className="overflow-x-auto -mx-5 md:-mx-6">
+    <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border">
